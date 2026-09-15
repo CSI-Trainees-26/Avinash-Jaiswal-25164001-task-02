@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Progress — FitSphere</title>
+    <link rel="stylesheet" href="progress.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark"><img src="/logo.png" alt="logo" class="logo-img"></span>
+          <div><strong>FitSphere</strong><small>Personal wellness</small></div>
+        </div>
+        <nav>
+          <a class="nav-link" href="dashboard.html">🏠 <span>Dashboard</span></a
+          ><a class="nav-link" href="tasks.html">✅ <span>Tasks</span></a
+          ><a class="nav-link" href="habits.html">💪 <span>Habits</span></a
+          ><a class="nav-link" href="water.html">💧 <span>Water</span></a
+          ><a class="nav-link" href="fitness.html">🏋️ <span>Fitness</span></a
+          ><a class="nav-link active" href="progress.html"
+            >📈 <span>Progress</span></a
+          >
+        </nav>
+      </aside>
+      <main class="main">
+        <header class="page-head">
+          <div>
+            <p class="eyebrow">WEEKLY REVIEW</p>
+            <h1>Progress & insights</h1>
+            <p class="muted">
+              A calm view of your tasks, habits, hydration, calories and sleep.
+            </p>
+          </div>
+          <button id="exportBtn" class="primary-btn">↥ Export report</button>
+        </header>
+        <section class="score-grid">
+          <article class="score card">
+            <span>Overall score</span><strong id="overallScore">0%</strong>
+            <div class="score-ring" id="scoreRing"><div>FIT</div></div>
+          </article>
+          <article class="summary card">
+            <span>Task productivity</span><strong id="taskSummary">0 / 0</strong
+            ><small id="taskGrowth">0% completed</small>
+            <div class="mini-line"><i id="taskLine"></i></div>
+          </article>
+          <article class="summary card">
+            <span>Habit consistency</span><strong id="habitSummary">0%</strong
+            ><small id="habitSub">0 completions this week</small>
+            <div class="mini-line"><i id="habitLine"></i></div>
+          </article>
+          <article class="summary card">
+            <span>Water average</span><strong id="waterSummary">0 ml</strong
+            ><small>daily average</small>
+            <div class="mini-line"><i id="waterLine"></i></div>
+          </article>
+        </section>
+        <section class="charts-grid">
+          <article class="card chart-card">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">PRODUCTIVITY</span>
+                <h2>Weekly task completion</h2>
+              </div>
+            </div>
+            <div id="taskChart" class="chart"></div>
+          </article>
+          <article class="card chart-card">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">HYDRATION</span>
+                <h2>Water intake</h2>
+              </div>
+            </div>
+            <div id="waterChart" class="chart"></div>
+          </article>
+          <article class="card chart-card">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">RECOVERY</span>
+                <h2>Sleep duration</h2>
+              </div>
+            </div>
+            <div id="sleepChart" class="chart"></div>
+          </article>
+          <article class="card category-card">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">HABITS</span>
+                <h2>Category completion</h2>
+              </div>
+            </div>
+            <div id="categoryChart"></div>
+          </article>
+        </section>
+        <section class="card quote-section" id="quotes">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">SAVED</span>
+              <h2>Saved motivational quotes</h2>
+            </div>
+            <span class="muted" id="quoteCount">0 saved</span>
+          </div>
+          <div id="savedQuotes"></div>
+        </section>
+      </main>
+    </div>
+    <script src="progress.js"></script>
+  </body>
+</html>
+

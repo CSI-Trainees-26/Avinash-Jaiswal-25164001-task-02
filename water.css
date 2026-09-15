@@ -1,0 +1,288 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Inter, system-ui, sans-serif;
+  background: #f5f7fb;
+  color: #181b23;
+}
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 245px;
+  background: #151820;
+  color: #c8ccd5;
+  padding: 26px 16px;
+}
+.brand {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  padding: 0 12px 30px;
+  color: #fff;
+}
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: #6d5dfc;
+  border-radius: 12px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+  }
+  .logo-img {
+    width: 42px;
+    border-radius: 15px;
+    height: 42px;
+    object-fit: contain;
+}
+.brand strong {
+  display: block;
+}
+.brand small {
+  display: block;
+  color: #7f8491;
+  font-size: 11px;
+}
+.sidebar nav {
+  display: grid;
+  gap: 6px;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 13px;
+  border-radius: 12px;
+  color: #a9aeba;
+  text-decoration: none;
+  font-size: 14px;
+}
+.nav-link:hover,
+.nav-link.active {
+  background: #252936;
+  color: #fff;
+}
+.nav-link.active {
+  box-shadow: inset 3px 0 #7b6cff;
+}
+.main {
+  margin-left: 245px;
+  padding: 36px 42px 60px;
+}
+.page-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  font-weight: 800;
+  color: #8c91a0;
+}
+.page-head h1 {
+  font-size: 31px;
+  margin: 6px 0;
+}
+.muted {
+  font-size: 12px;
+  color: #8a8f9c;
+}
+.date-pill {
+  background: #fff;
+  border: 1px solid #e7e9ef;
+  border-radius: 11px;
+  padding: 10px 13px;
+  font-size: 11px;
+}
+.water-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 18px;
+}
+.card {
+  background: #fff;
+  border: 1px solid #e8eaf0;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px #1e27400a;
+}
+.water-hero {
+  padding: 27px;
+  background: linear-gradient(135deg, #fff, #eef8ff);
+}
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.water-hero h2 {
+  font-size: 44px;
+  letter-spacing: -1.5px;
+  margin: 5px 0;
+}
+.water-hero p {
+  font-size: 11px;
+  color: #87909d;
+}
+.drop {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #e0f4ff;
+  color: #28a5df;
+  font-size: 27px;
+}
+.big-progress {
+  height: 11px;
+  background: #e4f0f6;
+  border-radius: 99px;
+  overflow: hidden;
+  margin: 30px 0 18px;
+}
+.big-progress i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: #32aee5;
+  border-radius: 99px;
+  transition: 0.3s;
+}
+.quick-add {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+}
+.quick-add button,
+.reset-btn,
+.ghost-btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fff;
+  color: #3c6d83;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.quick-add button {
+  border: 1px solid #dcecf4;
+}
+.reset-btn {
+  margin-top: 12px;
+  background: #eef7fb;
+  color: #5c6c76;
+}
+.week-water {
+  padding: 24px;
+}
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 20px;
+}
+.section-head h2 {
+  font-size: 19px;
+  margin-top: 5px;
+}
+.water-bars {
+  height: 190px;
+  display: flex;
+  align-items: end;
+  justify-content: space-around;
+  gap: 10px;
+}
+.water-col {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  gap: 6px;
+}
+.water-col .bar-bg {
+  height: 135px;
+  width: 24px;
+  background: #edf5f9;
+  border-radius: 9px;
+  display: flex;
+  align-items: end;
+  overflow: hidden;
+}
+.water-col i {
+  width: 100%;
+  height: 0;
+  background: linear-gradient(#59c2ed, #259bd6);
+  border-radius: 9px;
+}
+.water-col b {
+  font-size: 9px;
+  color: #8e949e;
+}
+.water-col span {
+  font-size: 9px;
+  color: #666c78;
+}
+.log-card {
+  margin-top: 18px;
+  padding: 24px;
+}
+.drink-log {
+  display: grid;
+  gap: 8px;
+}
+.drink {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 11px;
+  background: #f8fafb;
+  font-size: 11px;
+}
+.drink b {
+  color: #299bd4;
+}
+.drink span {
+  color: #9297a1;
+}
+@media (max-width: 900px) {
+  .water-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 760px) {
+  .sidebar {
+    width: 72px;
+    padding: 20px 10px;
+  }
+  .brand div,
+  .nav-link span {
+    display: none;
+  }
+  .main {
+    margin-left: 72px;
+    padding: 25px 16px;
+  }
+  .page-head {
+    gap: 12px;
+  }
+  .quick-add {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* To highlight the bar */
+.water-col.today b,
+.water-col.today span {
+  color: #299bd7;
+  font-weight: 800;
+}

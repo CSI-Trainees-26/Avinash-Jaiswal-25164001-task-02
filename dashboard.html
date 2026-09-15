@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — FitSphere</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+  </head>
+
+  <body>
+    <div class="app-shell">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark"><img src="/logo.png" alt="logo" class="logo-img"></span>
+
+          <div>
+            <strong>FitSphere</strong>
+            <small>Personal wellness</small>
+          </div>
+        </div>
+
+        <nav>
+          <a class="nav-link active" href="dashboard.html">
+            🏠
+            <span>Dashboard</span>
+          </a>
+
+          <a class="nav-link" href="tasks.html">
+            ✅
+            <span>Tasks</span>
+          </a>
+
+          <a class="nav-link" href="habits.html">
+            💪
+            <span>Habits</span>
+          </a>
+
+          <a class="nav-link" href="water.html">
+            💧
+            <span>Water</span>
+          </a>
+
+          <a class="nav-link" href="fitness.html">
+            🏋️
+            <span>Fitness</span>
+          </a>
+
+          <a class="nav-link" href="progress.html">
+            📈
+            <span>Progress</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <a class="nav-link" href="progress.html">
+            🔍
+            <span>Track Progress</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Dashboard Content -->
+      <main class="main">
+        <!-- Top Header -->
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" id="todayLabel">Today</p>
+
+            <h1>
+              Good evening<span id="greetingName">, Avinash</span> 👋
+            </h1>
+
+            <p class="muted">
+              Focus on the small wins. They compound.
+            </p>
+          </div>
+
+          <div class="top-actions">
+            <div class="date-pill">
+              📅
+              <span id="fullDate"></span>
+            </div>
+
+            <a class="profile" href="progress.html">
+              <span>AJ</span>
+              <b>My Profile</b>
+            </a>
+          </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-grid">
+          <!-- Daily Motivation -->
+          <article class="quote-card card">
+            <div class="card-head">
+              <div>
+                <span class="mini-label">DAILY MOTIVATION</span>
+                <h2 id="quoteText">
+                  Loading a little motivation…
+                </h2>
+              </div>
+
+              <button
+                id="refreshQuote"
+                class="icon-btn"
+                title="New quote"
+              >
+                ↻
+              </button>
+            </div>
+
+            <p id="quoteAuthor" class="muted">— FitSphere</p>
+
+            <div class="quote-actions">
+              <button id="saveQuote" class="soft-btn">
+                📌 Save quote
+              </button>
+
+              <button
+                id="viewSaved"
+                class="ghost-btn"
+                onclick="location.href='progress.html#quotes'"
+              >
+                Saved quotes
+              </button>
+            </div>
+          </article>
+
+          <!-- Focus Session / Pomodoro Timer -->
+          <article class="focus-card card">
+            <div class="card-head">
+              <span class="mini-label">FOCUS SESSION</span>
+              <span class="status-dot">● Ready</span>
+            </div>
+
+            <div class="timer" id="timerDisplay">25:00</div>
+
+            <div class="timer-meta">
+              <span id="timerTaskLabel">No task selected</span>
+              <span id="timerStatus">Pomodoro</span>
+            </div>
+
+            <div class="timer-controls">
+              <button id="timerStart" class="primary-btn">
+                Start
+              </button>
+
+              <button id="timerReset" class="ghost-btn">
+                Reset
+              </button>
+            </div>
+
+            <select id="pomodoroTask" class="select"></select>
+          </article>
+        </section>
+
+        <!-- Metrics Section -->
+        <section class="metrics-grid">
+          <a class="metric-card card" href="tasks.html">
+            <span class="metric-icon purple">✅</span>
+
+            <div>
+              <span>Tasks today</span>
+              <strong id="taskMetric">0 / 0</strong>
+              <small id="taskMetricSub">0% complete</small>
+            </div>
+          </a>
+
+          <a class="metric-card card" href="habits.html">
+            <span class="metric-icon green">📊</span>
+
+            <div>
+              <span>Habits today</span>
+              <strong id="habitMetric">0 / 0</strong>
+              <small id="habitMetricSub">0% complete</small>
+            </div>
+          </a>
+
+          <a class="metric-card card" href="water.html">
+            <span class="metric-icon blue">💧</span>
+
+            <div>
+              <span>Water intake</span>
+              <strong id="waterMetric">0 ml</strong>
+              <small>Goal: 2500 ml</small>
+            </div>
+          </a>
+
+          <a class="metric-card card" href="fitness.html">
+            <span class="metric-icon orange">🔥</span>
+
+            <div>
+              <span>Calories</span>
+              <strong id="calorieMetric">0 kcal</strong>
+              <small>Today's intake</small>
+            </div>
+          </a>
+        </section>
+
+        <!-- Progress and Sleep Section -->
+        <section class="content-grid">
+          <!-- Daily Progress -->
+          <article class="card progress-card">
+            <div class="card-head">
+              <div>
+                <span class="mini-label">TODAY</span>
+                <h2>Daily progress</h2>
+              </div>
+
+              <a href="progress.html">View Progress →</a>
+            </div>
+
+            <div class="progress-layout">
+              <div class="ring" id="dailyRing">
+                <div>
+                  <strong id="dailyPercent">0%</strong>
+                  <span>complete</span>
+                </div>
+              </div>
+
+              <div class="progress-copy">
+                <h3 id="progressHeadline">
+                  Let's get started.
+                </h3>
+
+                <p class="muted" id="progressDescription">
+                  Complete a task or habit to build today's score.
+                </p>
+
+                <div class="tiny-stats">
+                  <span>
+                    <b id="doneCount">0</b> done
+                  </span>
+
+                  <span>
+                    <b id="remainingCount">0</b> remaining
+                  </span>
+
+                  <span>
+                    <b id="pomodoroCount">0</b> focus sessions
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Sleep -->
+          <article class="card sleep-card">
+            <div class="card-head">
+              <div>
+                <span class="mini-label">RECOVERY</span>
+                <h2>Sleep</h2>
+              </div>
+
+              <a href="fitness.html">Update →</a>
+            </div>
+
+            <div class="sleep-number">
+              <strong id="sleepMetric">0h 0m</strong>
+              <span>last night</span>
+            </div>
+
+            <div class="sleep-bar">
+              <div id="sleepBar"></div>
+            </div>
+
+            <div class="sleep-foot">
+              <span>Goal 8h</span>
+              <span id="sleepScore">0%</span>
+            </div>
+          </article>
+        </section>
+
+        <!-- Weekly Progress -->
+        <section class="card weekly-card">
+          <div class="card-head">
+            <div>
+              <span class="mini-label">WEEK AT A GLANCE</span>
+              <h2>Weekly progress</h2>
+            </div>
+
+            <a href="progress.html">Full report →</a>
+          </div>
+
+          <div class="weekly-bars" id="weeklyBars"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Fitness — FitSphere</title>
+    <link rel="stylesheet" href="fitness.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark"><img src="/logo.png" alt="logo" class="logo-img"></span>
+          <div><strong>FitSphere</strong><small>Personal wellness</small></div>
+        </div>
+        <nav>
+          <a class="nav-link" href="dashboard.html">🏠 <span>Dashboard</span></a
+          ><a class="nav-link" href="tasks.html">✅ <span>Tasks</span></a
+          ><a class="nav-link" href="habits.html">💪 <span>Habits</span></a
+          ><a class="nav-link" href="water.html">💧 <span>Water</span></a
+          ><a class="nav-link active" href="fitness.html"
+            >🏋️ <span>Fitness</span></a
+          ><a class="nav-link" href="progress.html">📈 <span>Progress</span></a>
+        </nav>
+      </aside>
+      <main class="main">
+        <header class="page-head">
+          <div>
+            <p class="eyebrow">FITNESS & RECOVERY</p>
+            <h1>Fitness center</h1>
+            <p class="muted">
+              Log the numbers that help you understand your energy and recovery.
+            </p>
+          </div>
+        </header>
+        <section class="metric-grid">
+          <div class="card metric">
+            <span class="icon orange">🔥</span>
+            <div>
+              <small>Calories today</small><strong id="calorieValue">0</strong
+              ><em>kcal</em>
+            </div>
+          </div>
+          <div class="card metric">
+            <span class="icon green">👣</span>
+            <div>
+              <small>Steps today</small><strong id="stepValue">0</strong
+              ><em>steps</em>
+            </div>
+          </div>
+          <div class="card metric">
+            <span class="icon purple">⏱️</span>
+            <div>
+              <small>Sleep last night</small><strong id="sleepValue">0</strong
+              ><em>hours</em>
+            </div>
+          </div>
+        </section>
+        <section class="forms-grid">
+          <article class="card form-card">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">DAILY INPUT</span>
+                <h2>Fitness log</h2>
+              </div>
+            </div>
+            <form id="fitnessForm">
+              <label
+                >Calories consumed<input
+                  id="calories"
+                  type="number"
+                  min="0"
+                  placeholder="e.g. 2100" /></label
+              ><label
+                >Steps<input
+                  id="steps"
+                  type="number"
+                  min="0"
+                  placeholder="e.g. 8000" /></label
+              ><label
+                >Sleep duration (hours)<input
+                  id="sleep"
+                  type="number"
+                  min="0"
+                  max="24"
+                  step="0.1"
+                  placeholder="e.g. 7.5" /></label
+              ><button class="primary-btn">Save today's stats</button>
+            </form>
+          </article>
+          <article class="card workout-card">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">WORKOUT</span>
+                <h2>Log a workout</h2>
+              </div>
+            </div>
+            <form id="workoutForm">
+              <label
+                >Activity<select id="activity">
+                  <option>Running</option>
+                  <option>Walking</option>
+                  <option>Cycling</option>
+                  <option>Strength training</option>
+                  <option>Yoga</option>
+                  <option>Other</option>
+                </select></label
+              >
+              <div class="two">
+                <label
+                  >Duration (min)<input
+                    id="duration"
+                    type="number"
+                    min="1"
+                    placeholder="45" /></label
+                ><label
+                  >Distance (km)<input
+                    id="distance"
+                    type="number"
+                    min="0"
+                    step="0.1"
+                    placeholder="5"
+                /></label>
+              </div>
+              <button class="primary-btn">Add workout</button>
+            </form>
+            <div id="workoutLog" class="workout-log"></div>
+          </article>
+        </section>
+        <section class="card sleep-chart">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">RECOVERY</span>
+              <h2>Weekly Workout Progress</h2>
+            </div>
+            <a href="progress.html">View full progress →</a>
+          </div>
+          <div id="sleepBars" class="sleep-bars"></div>
+        </section>
+      </main>
+    </div>
+    <script src="fitness.js"></script>
+  </body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Tasks — FitSphere</title>
+    <link rel="stylesheet" href="tasks.css">
+  </head>
+
+  <body>
+    <div class="app-shell">
+      <!-- Sidebar navigation -->
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark">
+            <img src="/logo.png" alt="logo" class="logo-img">
+          </span>
+
+          <div>
+            <strong>FitSphere</strong>
+            <small>Personal wellness</small>
+          </div>
+        </div>
+
+        <nav>
+          <a class="nav-link" href="dashboard.html">
+            🏠 <span>Dashboard</span>
+          </a>
+
+          <a class="nav-link active" href="tasks.html">
+            ✅ <span>Tasks</span>
+          </a>
+
+          <a class="nav-link" href="habits.html">
+            💪 <span>Habits</span>
+          </a>
+
+          <a class="nav-link" href="water.html">
+            💧 <span>Water</span>
+          </a>
+
+          <a class="nav-link" href="fitness.html">
+            🏋️ <span>Fitness</span>
+          </a>
+
+          <a class="nav-link" href="progress.html">
+            📈 <span>Progress</span>
+          </a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <!-- Page heading and add-task button -->
+        <header class="page-head">
+          <div>
+            <p class="eyebrow">PRODUCTIVITY</p>
+            <h1>Tasks</h1>
+            <p class="muted">
+              Plan your day, manage priorities, and finish what matters.
+            </p>
+          </div>
+
+          <button class="primary-btn" id="openTaskModal">
+            ＋ Add task
+          </button>
+        </header>
+
+        <!-- Task statistics -->
+        <section class="stats-grid">
+          <div class="stat card">
+            <span>Total</span>
+            <strong id="totalTasks">0</strong>
+          </div>
+
+          <div class="stat card">
+            <span>Completed</span>
+            <strong id="completedTasks">0</strong>
+          </div>
+
+          <div class="stat card">
+            <span>Pending</span>
+            <strong id="pendingTasks">0</strong>
+          </div>
+
+          <div class="stat card">
+            <span>Completion</span>
+            <strong id="taskPercent">0%</strong>
+          </div>
+        </section>
+
+        <!-- Pending and completed task board -->
+        <section class="card board">
+          <div class="board-head">
+            <div>
+              <span class="eyebrow">TODAY'S WORK</span>
+              <h2>Task board</h2>
+            </div>
+
+            <div class="board-progress">
+              <span id="progressText">0 of 0 complete</span>
+
+              <div>
+                <i id="progressFill"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="columns">
+            <!-- Pending tasks -->
+            <div
+              class="task-column"
+              id="pendingColumn"
+              data-status="pending"
+            >
+              <div class="column-head">
+                <h3>
+                  Pending
+                  <span id="pendingCount">0</span>
+                </h3>
+
+                <small>Drag to completed</small>
+              </div>
+
+              <div id="pendingList" class="task-list"></div>
+            </div>
+
+            <!-- Completed tasks -->
+            <div
+              class="task-column completed-column"
+              id="completedColumn"
+              data-status="completed"
+            >
+              <div class="column-head">
+                <h3>
+                  Completed
+                  <span id="completedCount">0</span>
+                </h3>
+
+                <small>Finished today</small>
+              </div>
+
+              <div id="completedList" class="task-list"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Add/edit task modal -->
+    <div class="modal hidden" id="taskModal">
+      <div class="modal-box">
+        <div class="modal-head">
+          <h2 id="modalTitle">Add new task</h2>
+          <button id="closeTaskModal">×</button>
+        </div>
+
+        <form id="taskForm">
+          <input type="hidden" id="editId" />
+
+          <label>
+            Task title
+            <input
+              id="taskTitle"
+              required
+              placeholder="e.g. Complete workout"
+            />
+          </label>
+
+          <label>
+            Description
+            <textarea
+              id="taskDescription"
+              placeholder="Add a short description"
+            ></textarea>
+          </label>
+
+          <div class="form-grid">
+            <label>
+              Category
+              <select id="taskCategory" required>
+                <option value="">Select</option>
+                <option>Fitness</option>
+                <option>Work</option>
+                <option>Study</option>
+                <option>Personal</option>
+                <option>Health</option>
+                <option>Other</option>
+              </select>
+            </label>
+
+            <label>
+              Priority
+              <select id="taskPriority" required>
+                <option value="">Select</option>
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            Due date
+            <input type="date" id="taskDueDate" />
+          </label>
+
+          <div class="modal-actions">
+            <button type="button" class="ghost-btn" id="cancelTask">
+              Cancel
+            </button>
+
+            <button class="primary-btn">Save task</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="tasks.js"></script>
+  </body>
+</html>
+

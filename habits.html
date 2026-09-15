@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Habits — FitSphere</title>
+    <link rel="stylesheet" href="habits.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark"><img src="/logo.png" alt="logo" class="logo-img"></span>
+          <div><strong>FitSphere</strong><small>Personal wellness</small></div>
+        </div>
+        <nav>
+          <a class="nav-link" href="dashboard.html">🏠 <span>Dashboard</span></a
+          ><a class="nav-link" href="tasks.html">✅ <span>Tasks</span></a
+          ><a class="nav-link active" href="habits.html"
+            >💪 <span>Habits</span></a
+          ><a class="nav-link" href="water.html">💧 <span>Water</span></a
+          ><a class="nav-link" href="fitness.html">🏋️ <span>Fitness</span></a
+          ><a class="nav-link" href="progress.html">📈 <span>Progress</span></a>
+        </nav>
+      </aside>
+      <main class="main">
+        <header class="page-head">
+          <div>
+            <p class="eyebrow">CONSISTENCY</p>
+            <h1>Habit tracker</h1>
+            <p class="muted">
+              Build routines that get stronger with repetition.
+            </p>
+          </div>
+          <button id="addHabit" class="primary-btn">＋ New habit</button>
+        </header>
+        <section class="overview-grid">
+          <div class="card overview">
+            <span>Today's completion</span><strong id="todayPercent">0%</strong>
+            <div class="line"><i id="todayLine"></i></div>
+          </div>
+          <div class="card overview">
+            <span>Active habits</span><strong id="habitCount">0</strong
+            ><small>Keep your system simple.</small>
+          </div>
+          <div class="card overview">
+            <span>Best streak</span><strong id="bestStreak">0 days</strong
+            ><small>Across all habits.</small>
+          </div>
+        </section>
+        <section class="card habits-board">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">YOUR ROUTINES</span>
+              <h2>Habits</h2>
+            </div>
+            <div class="filter">
+              <button class="filter-btn active" data-filter="All">All</button
+              ><button class="filter-btn" data-filter="Workout">Workout</button
+              ><button class="filter-btn" data-filter="Fitness">Fitness</button
+              ><button class="filter-btn" data-filter="Cardio">Cardio</button
+              ><button class="filter-btn" data-filter="Mental Wellness">
+                Mind
+              </button>
+            </div>
+          </div>
+          <div id="habitGrid" class="habit-grid"></div>
+        </section>
+        <section class="card heatmap-card">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">ACTIVITY GRAPH</span>
+              <h2>Habit consistency</h2>
+            </div>
+            <span class="muted">Last 12 weeks</span>
+          </div>
+          <div id="heatmap" class="heatmap"></div>
+          <div class="heat-legend">
+            <span>Less</span><i></i><i></i><i></i><i></i><span>More</span>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div class="modal hidden" id="habitModal">
+      <div class="modal-box">
+        <div class="modal-head">
+          <h2 id="habitModalTitle">Create habit</h2>
+          <button id="closeHabit">×</button>
+        </div>
+        <form id="habitForm">
+          <input type="hidden" id="habitId" /><label
+            >Habit name<input
+              id="habitName"
+              required
+              placeholder="e.g. Morning run" /></label
+          ><label
+            >Description<input
+              id="habitDescription"
+              placeholder="What does success look like?" /></label
+          ><label
+            >Category<select id="habitCategory" required>
+              <option value="">Select</option>
+              <option>Workout</option>
+              <option>Fitness</option>
+              <option>Cardio</option>
+              <option>Mental Wellness</option>
+            </select></label
+          >
+          <div class="modal-actions">
+            <button type="button" id="cancelHabit" class="ghost-btn">
+              Cancel</button
+            ><button class="primary-btn">Save habit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="habits.js"></script>
+  </body>
+</html>

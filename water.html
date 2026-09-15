@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Water — FitSphere</title>
+
+    <link rel="stylesheet" href="water.css">
+  </head>
+
+  <body>
+    <div class="app-shell">
+      <!-- Sidebar navigation -->
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark">
+            <img
+              src="/logo.png"
+              alt="logo"
+              class="logo-img">
+          </span>
+
+          <div>
+            <strong>FitSphere</strong>
+            <small>Personal wellness</small>
+          </div>
+        </div>
+
+        <nav>
+          <a class="nav-link" href="dashboard.html">
+            🏠 <span>Dashboard</span>
+          </a>
+
+          <a class="nav-link" href="tasks.html">
+            ✅ <span>Tasks</span>
+          </a>
+
+          <a class="nav-link" href="habits.html">
+            💪 <span>Habits</span>
+          </a>
+
+          <a class="nav-link active" href="water.html">
+            💧 <span>Water</span>
+          </a>
+
+          <a class="nav-link" href="fitness.html">
+            🏋️ <span>Fitness</span>
+          </a>
+
+          <a class="nav-link" href="progress.html">
+            📈 <span>Progress</span>
+          </a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <!-- Page heading and current date -->
+        <header class="page-head">
+          <div>
+            <p class="eyebrow">HYDRATION</p>
+
+            <h1>Water intake</h1>
+
+            <p class="muted">
+              Small sips, steady energy. Your daily target is 2.5 L.
+            </p>
+          </div>
+
+          <div class="date-pill" id="datePill"></div>
+        </header>
+
+        <!-- Today's water intake and weekly hydration trend -->
+        <section class="water-grid">
+          <article class="card water-hero">
+            <div class="hero-top">
+              <div>
+                <span class="eyebrow">TODAY</span>
+
+                <h2>
+                  <span id="waterAmount">0</span> ml
+                </h2>
+
+                <p id="waterGoalText">
+                  0% of 2500 ml goal
+                </p>
+              </div>
+
+              <div class="drop">💧</div>
+            </div>
+
+            <div class="big-progress">
+              <i id="waterFill"></i>
+            </div>
+
+            <!-- Quick water intake buttons -->
+            <div class="quick-add">
+              <button data-ml="250">+250 ml</button>
+              <button data-ml="500">+500 ml</button>
+              <button data-ml="750">+750 ml</button>
+              <button id="customAdd">Custom</button>
+            </div>
+
+            <button class="reset-btn" id="resetWater">
+              Reset today's intake
+            </button>
+          </article>
+
+          <article class="card week-water">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">LAST 7 DAYS</span>
+                <h2>Hydration trend</h2>
+              </div>
+
+              <span class="muted">Goal 2500 ml</span>
+            </div>
+
+            <div class="water-bars" id="waterBars"></div>
+          </article>
+        </section>
+
+        <!-- Today's drinking history -->
+        <section class="card log-card">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">TODAY'S LOG</span>
+              <h2>Recent drinks</h2>
+            </div>
+
+            <button class="ghost-btn" id="clearLog">
+              Clear today
+            </button>
+          </div>
+
+          <div id="drinkLog" class="drink-log"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="water.js"></script>
+  </body>
+</html>
+
